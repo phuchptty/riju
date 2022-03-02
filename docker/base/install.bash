@@ -6,6 +6,8 @@ latest_release() {
     curl -sSL "https://api.github.com/repos/$1/releases/latest" | jq -r .tag_name
 }
 
+sed -i -e 's/http:\/\/archive\.ubuntu\.com\/ubuntu\//mirror:\/\/mirrors\.ubuntu\.com\/mirrors\.txt/' /etc/apt/sources.list
+
 mkdir /tmp/riju-work
 pushd /tmp/riju-work
 

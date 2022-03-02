@@ -6,6 +6,8 @@ pushd /tmp
 
 export DEBIAN_FRONTEND=noninteractive
 
+sed -i -e 's/http:\/\/archive\.ubuntu\.com\/ubuntu\//mirror:\/\/mirrors\.ubuntu\.com\/mirrors\.txt/' /etc/apt/sources.list
+
 apt-get update
 apt-get install -y curl gnupg lsb-release
 

@@ -6,6 +6,8 @@ latest_watchexec_release() {
     curl -sSL "https://api.github.com/repos/$1/releases" | jq -c -r '[.[] | select(.tag_name | test("^cli-v"))] | first | .tag_name'
 }
 
+sed -i -e 's/http:\/\/archive\.ubuntu\.com\/ubuntu\//mirror:\/\/mirrors\.ubuntu\.com\/mirrors\.txt/' /etc/apt/sources.list
+
 mkdir /tmp/riju-work
 pushd /tmp/riju-work
 

@@ -8,6 +8,8 @@ set -euxo pipefail
 mkdir /tmp/riju-work
 pushd /tmp/riju-work
 
+sed -i -e 's/http:\/\/archive\.ubuntu\.com\/ubuntu\//mirror:\/\/mirrors\.ubuntu\.com\/mirrors\.txt/' /etc/apt/sources.list
+
 export DEBIAN_FRONTEND=noninteractive
 
 apt-get update
